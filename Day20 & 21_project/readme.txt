@@ -1,0 +1,1 @@
+This folder includes day 20 and 21 project - building the classic snake game.
