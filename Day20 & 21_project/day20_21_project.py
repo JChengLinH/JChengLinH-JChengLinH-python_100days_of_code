@@ -1,9 +1,9 @@
 # Day 20 - Snake Game with Python Turtle Graphics
 
 from turtle import Screen
-from day20_project_snake import Snake
-from day20_project_food import Food
-from day20_project_scoreboard import ScoreBoard
+from day20_21_project_snake import Snake
+from day20_21_project_food import Food
+from day20_21_project_scoreboard import ScoreBoard
 import time
 
 screen = Screen()
@@ -32,8 +32,8 @@ while game_is_on:
     # Detect collision with tail.
     for part in snake.snake_segment_list[1:]:
         if snake.head.distance(part) < 5:
-            game_is_on = False
-            scoreboard.end_game()
+            scoreboard.reset()
+            snake.reset()
             
     # Detect collision with food.
     if snake.head.distance(food) < 13:
@@ -44,9 +44,8 @@ while game_is_on:
     
     # Detect collision with walls.
     if snake.head.xcor() > 290 or snake.head.xcor() < -290 or snake.head.ycor() > 290 or snake.head.ycor() < -290:
-        game_is_on = False
-        scoreboard.end_game()
-
+        scoreboard.reset()
+        snake.reset()
     
     
 

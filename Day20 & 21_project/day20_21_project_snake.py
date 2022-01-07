@@ -14,17 +14,18 @@ for n in range(STARTING_SIZE - 1):
     STARTING_POS.append((START_X_POS, START_Y_POS))
 
 class Snake:
-
-
     def __init__(self):
         self.snake_segment_list = []
+        self.create_snake()
+        self.head = self.snake_segment_list[0]
+
+
+    def create_snake(self):
         for _ in range(STARTING_SIZE):
             self.snake_segment_list.append(Turtle(shape="square"))
             self.snake_segment_list[_].penup()
             self.snake_segment_list[_].color("white")
             self.snake_segment_list[_].goto(STARTING_POS[_])
-
-        self.head = self.snake_segment_list[0]
 
 
     def move(self):
@@ -34,6 +35,14 @@ class Snake:
 
         self.head.forward(20)
 
+
+    def reset(self):
+        for segment in self.snake_segment_list:
+            segment.goto(1000,1000)
+        self.snake_segment_list.clear()
+        self.create_snake()
+        self.head = self.snake_segment_list[0]
+        
 
     def up(self):
         if self.head.heading() != 270:
