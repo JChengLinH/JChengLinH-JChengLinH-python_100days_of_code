@@ -1,9 +1,5 @@
-def add(*args):
-    sum = 0
-    for n in args:
-        sum += n
-    return sum
+a = {'apple': {'fruit': "a", "test": "b"}, 'beetroot': 'vegetable', 'cake': 'dessert'}
 
+new = {fruit for (fruit, category) in a.items()}
 
-
-print(add(1,2,3,4))
+print(new)
