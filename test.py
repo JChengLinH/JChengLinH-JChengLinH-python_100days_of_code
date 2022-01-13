@@ -1,5 +1,3 @@
-a = {'apple': {'fruit': "a", "test": "b"}, 'beetroot': 'vegetable', 'cake': 'dessert'}
+a = 3.1456
 
-new = {fruit for (fruit, category) in a.items()}
-
-print(new)
+print(f"{0.2}".format(a))
