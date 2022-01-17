@@ -1,5 +1,5 @@
-*.cache
-.vscode
-.idea
-*.json
-test.py
+/*.cache
+/.vscode
+/.idea
+/*.json
+/test.py
